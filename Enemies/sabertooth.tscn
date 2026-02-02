@@ -1,0 +1,104 @@
+[gd_scene load_steps=18 format=3 uid="uid://dbcvahsapms3k"]
+
+[ext_resource type="Script" uid="uid://ci0dl5q8yvsp4" path="res://Scence/WorldScence/Scripts/Enemies/sabertooth.gd" id="1_6ppmj"]
+[ext_resource type="Texture2D" uid="uid://cp8f2r46sutht" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/01-Idle/Idle 01.png" id="1_grd80"]
+[ext_resource type="Texture2D" uid="uid://dgiy8sxxihx7" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/02-Run/Run 01.png" id="2_6ppmj"]
+[ext_resource type="Texture2D" uid="uid://clam0s8g4kdx1" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/02-Run/Run 02.png" id="3_w1rwj"]
+[ext_resource type="Texture2D" uid="uid://dskuaxwncw5nh" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/02-Run/Run 03.png" id="4_50e48"]
+[ext_resource type="Texture2D" uid="uid://doxdr7464lbnq" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/02-Run/Run 05.png" id="5_bmvkb"]
+[ext_resource type="Texture2D" uid="uid://bgcs0jyl5nakg" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/02-Run/Run 06.png" id="6_0mfk2"]
+[ext_resource type="Texture2D" uid="uid://cjoinexebvd6e" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/09-Dead Hit/Dead Hit 01.png" id="8_ihmnn"]
+[ext_resource type="Texture2D" uid="uid://nf5p3mojfpod" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/09-Dead Hit/Dead Hit 02.png" id="9_tka6m"]
+[ext_resource type="Texture2D" uid="uid://b28nqg5fxukpq" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/09-Dead Hit/Dead Hit 03.png" id="10_jecii"]
+[ext_resource type="Texture2D" uid="uid://ds23if0gnmkk1" path="res://Treasure Hunters/Enemy/Sprites/Fierce Tooth/09-Dead Hit/Dead Hit 04.png" id="11_clb1l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c300b"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3r7as"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="Animation" id="Animation_mpp6f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_grd80")]
+}
+
+[sub_resource type="Animation" id="Animation_76yma"]
+resource_name = "Run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.26666668, 0.36666667, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_6ppmj"), ExtResource("3_w1rwj"), ExtResource("4_50e48"), ExtResource("5_bmvkb"), ExtResource("1_grd80"), ExtResource("6_0mfk2")]
+}
+
+[sub_resource type="Animation" id="Animation_rtvtg"]
+resource_name = "Die"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.26666668, 0.4666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_ihmnn"), ExtResource("9_tka6m"), ExtResource("10_jecii"), ExtResource("11_clb1l")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_muvs3"]
+_data = {
+&"Die": SubResource("Animation_rtvtg"),
+&"RESET": SubResource("Animation_mpp6f"),
+&"Run": SubResource("Animation_76yma")
+}
+
+[node name="Sabertooth" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+script = ExtResource("1_6ppmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_grd80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_c300b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_3r7as")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_muvs3")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-10, 0)
+target_position = Vector2(0, 15)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

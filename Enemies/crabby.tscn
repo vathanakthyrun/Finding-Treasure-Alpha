@@ -1,0 +1,103 @@
+[gd_scene load_steps=19 format=3 uid="uid://dfx87ici1elaw"]
+
+[ext_resource type="Texture2D" uid="uid://fx0ouxxdgx7f" path="res://Treasure Hunters/Enemy/Sprites/Crabby/01-Idle/Idle 01.png" id="1_e201v"]
+[ext_resource type="Script" uid="uid://b4c0ljqwb0c7f" path="res://Scence/WorldScence/Scripts/Enemies/crabby.gd" id="1_udtrj"]
+[ext_resource type="Texture2D" uid="uid://ckpecwmblxpq" path="res://Treasure Hunters/Enemy/Sprites/Crabby/02-Run/Run 01.png" id="2_rg4b3"]
+[ext_resource type="Texture2D" uid="uid://be2wp23vgxjoy" path="res://Treasure Hunters/Enemy/Sprites/Crabby/02-Run/Run 02.png" id="3_yg12f"]
+[ext_resource type="Texture2D" uid="uid://c728it5bnqk48" path="res://Treasure Hunters/Enemy/Sprites/Crabby/02-Run/Run 03.png" id="4_6b3um"]
+[ext_resource type="Texture2D" uid="uid://b5e5nbrmpme44" path="res://Treasure Hunters/Enemy/Sprites/Crabby/02-Run/Run 04.png" id="5_rgrq8"]
+[ext_resource type="Texture2D" uid="uid://bcpfa64ebnlap" path="res://Treasure Hunters/Enemy/Sprites/Crabby/02-Run/Run 05.png" id="6_udtrj"]
+[ext_resource type="Texture2D" uid="uid://rlndaj7rullc" path="res://Treasure Hunters/Enemy/Sprites/Crabby/02-Run/Run 06.png" id="7_oxfhr"]
+[ext_resource type="Texture2D" uid="uid://ct6hruwqf7tdl" path="res://Treasure Hunters/Enemy/Sprites/Crabby/09-Dead Hit/Dead Hit 01.png" id="9_oxfhr"]
+[ext_resource type="Texture2D" uid="uid://yxb8b56h7cgd" path="res://Treasure Hunters/Enemy/Sprites/Crabby/09-Dead Hit/Dead Hit 02.png" id="10_1mxsg"]
+[ext_resource type="Texture2D" uid="uid://bmgw3bbtldjpd" path="res://Treasure Hunters/Enemy/Sprites/Crabby/09-Dead Hit/Dead Hit 03.png" id="11_c4723"]
+[ext_resource type="Texture2D" uid="uid://ch18dn814mw6c" path="res://Treasure Hunters/Enemy/Sprites/Crabby/09-Dead Hit/Dead Hit 04.png" id="12_3adm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mxsg"]
+size = Vector2(23, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4723"]
+size = Vector2(23, 22)
+
+[sub_resource type="Animation" id="Animation_3adm6"]
+resource_name = "Run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.26666668, 0.36666667, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_rg4b3"), ExtResource("3_yg12f"), ExtResource("4_6b3um"), ExtResource("5_rgrq8"), ExtResource("6_udtrj"), ExtResource("7_oxfhr")]
+}
+
+[sub_resource type="Animation" id="Animation_2lpol"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_e201v")]
+}
+
+[sub_resource type="Animation" id="Animation_cjj3r"]
+resource_name = "Die"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.43333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_oxfhr"), ExtResource("10_1mxsg"), ExtResource("11_c4723"), ExtResource("12_3adm6")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cjj3r"]
+_data = {
+&"Die": SubResource("Animation_cjj3r"),
+&"RESET": SubResource("Animation_2lpol"),
+&"Run": SubResource("Animation_3adm6")
+}
+
+[node name="Crabby" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+script = ExtResource("1_udtrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e201v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_1mxsg")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_c4723")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cjj3r")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-12, 0)
+target_position = Vector2(0, 15)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
