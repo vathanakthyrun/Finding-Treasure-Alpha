@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctcwo4u5jo5iq"]
+
+[ext_resource type="Script" uid="uid://f8j2c4wdwy81" path="res://Scence/WorldScence/Scripts/Interactable/coin.gd" id="1_wf5g6"]
+[ext_resource type="Texture2D" uid="uid://bnm13nvct7wjd" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_sl2ln"]
+[ext_resource type="Texture2D" uid="uid://dvken8woyqd06" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="3_7f7qg"]
+[ext_resource type="Texture2D" uid="uid://cnfyxrvnx22x0" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="4_2jolp"]
+[ext_resource type="Texture2D" uid="uid://vxcl8ismvt5w" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="5_3u1fe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onu28"]
+radius = 5.3851647
+
+[sub_resource type="Animation" id="Animation_b14df"]
+resource_name = "Idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_sl2ln"), ExtResource("3_7f7qg"), ExtResource("4_2jolp"), ExtResource("5_3u1fe")]
+}
+
+[sub_resource type="Animation" id="Animation_ecera"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_sl2ln")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ebuqb"]
+_data = {
+&"Idle": SubResource("Animation_b14df"),
+&"RESET": SubResource("Animation_ecera")
+}
+
+[node name="Coin" type="Node2D"]
+script = ExtResource("1_wf5g6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sl2ln")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5804739, 0.33562183)
+shape = SubResource("CircleShape2D_onu28")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ebuqb")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

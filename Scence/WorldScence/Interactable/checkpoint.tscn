@@ -1,0 +1,73 @@
+[gd_scene load_steps=15 format=3 uid="uid://djr5xp6lsm1j"]
+
+[ext_resource type="Script" uid="uid://dm8td51me5ffo" path="res://Scence/WorldScence/Scripts/Interactable/checkpoint.gd" id="1_nycx3"]
+[ext_resource type="Texture2D" uid="uid://dpmanxel7rs7g" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 01.png" id="1_qlq4b"]
+[ext_resource type="Texture2D" uid="uid://xo88yxpnoitn" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 02.png" id="2_nycx3"]
+[ext_resource type="Texture2D" uid="uid://ben1bg21bc1n6" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 03.png" id="3_jm13g"]
+[ext_resource type="Texture2D" uid="uid://conrecvki6sim" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 04.png" id="4_smkkh"]
+[ext_resource type="Texture2D" uid="uid://bapwxhdrxknpp" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 05.png" id="5_7il3m"]
+[ext_resource type="Texture2D" uid="uid://fa5bt3p21h55" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 06.png" id="6_wt8nm"]
+[ext_resource type="Texture2D" uid="uid://dgv3s32cubew6" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 07.png" id="7_uwpxt"]
+[ext_resource type="Texture2D" uid="uid://ki7w6l3ormkt" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 08.png" id="8_o6xpt"]
+[ext_resource type="Texture2D" uid="uid://cvlrrmucs2ffu" path="res://Treasure Hunters/TileSet/Sprites/Objects/Flag/Flag 09.png" id="9_7xsvw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho1en"]
+size = Vector2(38, 96)
+
+[sub_resource type="Animation" id="Animation_lsxxv"]
+resource_name = "Activated"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.1, 0.16666667, 0.26666668, 0.33333334, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_qlq4b"), ExtResource("2_nycx3"), ExtResource("3_jm13g"), ExtResource("4_smkkh"), ExtResource("5_7il3m"), ExtResource("6_wt8nm"), ExtResource("7_uwpxt"), ExtResource("8_o6xpt"), ExtResource("9_7xsvw")]
+}
+
+[sub_resource type="Animation" id="Animation_vuopu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_qlq4b")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhh2y"]
+_data = {
+&"Activated": SubResource("Animation_lsxxv"),
+&"RESET": SubResource("Animation_vuopu")
+}
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_nycx3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qlq4b")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_ho1en")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yhh2y")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

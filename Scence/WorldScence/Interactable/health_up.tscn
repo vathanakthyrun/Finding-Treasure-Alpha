@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://hd5df6gbjc84"]
+
+[ext_resource type="Script" uid="uid://t3i8bxelxor2" path="res://Scence/WorldScence/Scripts/Interactable/health_up.gd" id="1_41pp5"]
+[ext_resource type="Texture2D" uid="uid://b6qsmyt1u8ou8" path="res://Health/heart.png" id="2_80ial"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w7ha"]
+size = Vector2(16, 13)
+
+[node name="HealthUp" type="Node2D"]
+script = ExtResource("1_41pp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_80ial")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_6w7ha")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
