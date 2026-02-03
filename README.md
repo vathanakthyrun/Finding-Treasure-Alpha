@@ -21,6 +21,8 @@ Watch the gameplay here:
 - check point
 - death system
 
+# Asset
+- Itch.io : Pixel Frog(https://pixelfrog-assets.itch.io/treasure-hunters)
 
 # Used AI
 ChatGPT :
