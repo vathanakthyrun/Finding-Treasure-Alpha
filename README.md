@@ -6,6 +6,7 @@ Watch the gameplay here (Alpha game):
 [https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/AfDlUqmPtjY)
 
 Watch the gameplay here (Beta game):
+https://youtu.be/54URGLVSUUI 
 
      
 <img width="2559" height="1361" alt="game1" src="https://github.com/user-attachments/assets/5073d45c-b873-4b60-8246-b04ff0edbd50" />
@@ -49,3 +50,7 @@ ChatGPT :
   8. how can i add font for the label
   9. how to add sound effect to my enemies
   10. when my enemies die how to make it flip over
+  11. how to download exe file in godot4
+  12. why my coin my extralife and health pickup now not spawning back when i lose all my life
+  13. when i destroy my cannon it still stuck in animation how to fix it
+  14. how to add font to label
