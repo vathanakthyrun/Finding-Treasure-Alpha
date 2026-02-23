@@ -15,7 +15,7 @@ https://youtu.be/54URGLVSUUI
 
 <img width="2559" height="1367" alt="game3" src="https://github.com/user-attachments/assets/1dd3f340-c9da-406b-b83e-f10d44bb0f8a" />
 
-#Current Feature
+# Current Feature
 - Player movement (move left, right, jump, double jump, dash)
 - Fight animation
 - Enemies
