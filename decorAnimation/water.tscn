@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://jqn4e7a01dux"]
+
+[ext_resource type="Texture2D" uid="uid://bmrwkcr63xknl" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="1_1kve0"]
+[ext_resource type="Script" uid="uid://i4osln4a48ym" path="res://Scence/WorldScence/Scripts/decorScript/water.gd" id="1_6de20"]
+[ext_resource type="Texture2D" uid="uid://cw7nnctly3fvv" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/2.png" id="2_6de20"]
+[ext_resource type="Texture2D" uid="uid://cif7dp5vbhbon" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="3_gi7tm"]
+[ext_resource type="Texture2D" uid="uid://cdce6uah01atw" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/4.png" id="4_6t7jk"]
+
+[sub_resource type="Animation" id="Animation_6jxe4"]
+resource_name = "Idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333334, 0.53333336, 0.93333334, 1.4333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_1kve0"), ExtResource("2_6de20"), ExtResource("3_gi7tm"), ExtResource("4_6t7jk")]
+}
+
+[sub_resource type="Animation" id="Animation_uktuc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_1kve0")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o56t4"]
+_data = {
+&"Idle": SubResource("Animation_6jxe4"),
+&"RESET": SubResource("Animation_uktuc")
+}
+
+[node name="Water" type="Node2D"]
+script = ExtResource("1_6de20")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1kve0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o56t4")
+}

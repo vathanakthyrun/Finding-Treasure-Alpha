@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn2pewsis1hwp"]
+
+[ext_resource type="Texture2D" uid="uid://bblt6rf2amj23" path="res://animal_decor/starfish.png" id="1_2si4u"]
+
+[node name="starfish" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8146973e-06, -0.99999905)
+scale = Vector2(0.09062033, 0.090294845)
+texture = ExtResource("1_2si4u")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://mlf2eujxw4yg"]
+
+[ext_resource type="Texture2D" uid="uid://8pac8iri73t5" path="res://animal_decor/cocoon_web.png" id="1_kbdfm"]
+
+[node name="spiderweb" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.2851563, 0.19140625)
+texture = ExtResource("1_kbdfm")

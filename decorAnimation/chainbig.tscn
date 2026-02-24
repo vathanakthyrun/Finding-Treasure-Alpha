@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://h1ppeaof5f62"]
+
+[ext_resource type="Texture2D" uid="uid://b87djc4qn63a8" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/01.png" id="1_avwuf"]
+[ext_resource type="Script" uid="uid://bfctv8em65ukj" path="res://Scence/WorldScence/Scripts/decorScript/chainbig.gd" id="1_s0o30"]
+[ext_resource type="Texture2D" uid="uid://bkalewa2mbxtr" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/02.png" id="2_s0o30"]
+[ext_resource type="Texture2D" uid="uid://qkycgpxsbm4j" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/03.png" id="3_xnew8"]
+[ext_resource type="Texture2D" uid="uid://dccy5nwv2qj6e" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/04.png" id="4_dsrvp"]
+[ext_resource type="Texture2D" uid="uid://dw5fkb02ecueu" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/05.png" id="5_ejk2t"]
+[ext_resource type="Texture2D" uid="uid://crxo1uqya5u82" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/06.png" id="6_isaag"]
+[ext_resource type="Texture2D" uid="uid://dm53lyuej2hqc" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/07.png" id="7_2ex27"]
+[ext_resource type="Texture2D" uid="uid://xfuwbfldv0aa" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/08.png" id="8_81t1j"]
+
+[sub_resource type="Animation" id="Animation_biqwq"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.16666667, 0.3, 0.43333334, 0.56666666, 0.7, 0.8333333, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_avwuf"), ExtResource("2_s0o30"), ExtResource("3_xnew8"), ExtResource("4_dsrvp"), ExtResource("5_ejk2t"), ExtResource("6_isaag"), ExtResource("7_2ex27"), ExtResource("8_81t1j")]
+}
+
+[sub_resource type="Animation" id="Animation_mun75"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_avwuf")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_urila"]
+_data = {
+&"Idle": SubResource("Animation_biqwq"),
+&"RESET": SubResource("Animation_mun75")
+}
+
+[node name="chainbig" type="Node2D"]
+script = ExtResource("1_s0o30")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_avwuf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_urila")
+}

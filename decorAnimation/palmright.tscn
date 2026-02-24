@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1kac0wb3ai4l"]
+
+[ext_resource type="Texture2D" uid="uid://d01xqgtlqbrsb" path="res://Treasure Hunters/TileSet/Sprites/Back Palm Trees/Back Palm Tree Left 01.png" id="1_8orcm"]
+[ext_resource type="Script" uid="uid://bvdrlcykex42i" path="res://Scence/WorldScence/Scripts/decorScript/palmleft.gd" id="1_g1jfd"]
+[ext_resource type="Texture2D" uid="uid://0lesm8238rtp" path="res://Treasure Hunters/TileSet/Sprites/Back Palm Trees/Back Palm Tree Left 02.png" id="2_g1jfd"]
+[ext_resource type="Texture2D" uid="uid://bk3fxvqhigbp" path="res://Treasure Hunters/TileSet/Sprites/Back Palm Trees/Back Palm Tree Left 03.png" id="3_xq7a0"]
+[ext_resource type="Texture2D" uid="uid://bs0l0abvar0jt" path="res://Treasure Hunters/TileSet/Sprites/Back Palm Trees/Back Palm Tree Left 04.png" id="4_y7c12"]
+
+[sub_resource type="Animation" id="Animation_3jrm2"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.26666668, 0.5, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_8orcm"), ExtResource("2_g1jfd"), ExtResource("3_xq7a0"), ExtResource("4_y7c12")]
+}
+
+[sub_resource type="Animation" id="Animation_s0csa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_8orcm")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_552wi"]
+_data = {
+&"Idle": SubResource("Animation_3jrm2"),
+&"RESET": SubResource("Animation_s0csa")
+}
+
+[node name="palmright" type="Node2D"]
+script = ExtResource("1_g1jfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8orcm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_552wi")
+}

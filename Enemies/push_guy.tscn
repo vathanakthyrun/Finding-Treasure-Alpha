@@ -1,0 +1,200 @@
+[gd_scene load_steps=49 format=3 uid="uid://baeil0co03dq6"]
+
+[ext_resource type="Texture2D" uid="uid://ckmpvkogvy5nj" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/1-Idle/1.png" id="1_l7nct"]
+[ext_resource type="Script" uid="uid://dueg4h78wsbd4" path="res://Scence/WorldScence/Scripts/Enemies/push_guy.gd" id="1_yow4d"]
+[ext_resource type="Texture2D" uid="uid://brew68h8byjvq" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/1.png" id="3_mwglx"]
+[ext_resource type="Texture2D" uid="uid://d2n5cvc4hhby5" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/2.png" id="4_p8vrx"]
+[ext_resource type="Texture2D" uid="uid://7daak7rkewxc" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/3.png" id="5_0wchm"]
+[ext_resource type="Texture2D" uid="uid://dd8mkbxl7jow3" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/4.png" id="6_ayywm"]
+[ext_resource type="Texture2D" uid="uid://dxgj3h6iisegw" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/5.png" id="7_jqmki"]
+[ext_resource type="Texture2D" uid="uid://coqhq57divqhj" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/6.png" id="8_ki558"]
+[ext_resource type="Texture2D" uid="uid://50bdvfpwriks" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/7.png" id="9_j3blr"]
+[ext_resource type="Texture2D" uid="uid://bq07b6sapx2x4" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/8.png" id="10_w2yfk"]
+[ext_resource type="Texture2D" uid="uid://chytcwmkllkb8" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/9.png" id="11_t6ht5"]
+[ext_resource type="Texture2D" uid="uid://dracr1tje3pf6" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/10.png" id="12_4fxbj"]
+[ext_resource type="Texture2D" uid="uid://c61d0po8t1ri2" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/11.png" id="13_tbx7q"]
+[ext_resource type="Texture2D" uid="uid://dwqoeouf41o8n" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/2-Run/12.png" id="14_7d2ie"]
+[ext_resource type="Texture2D" uid="uid://b8vo6vlqxhijw" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/10-Dead Hit/1.png" id="15_pe67w"]
+[ext_resource type="Texture2D" uid="uid://i3vtw4t3klix" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/10-Dead Hit/2.png" id="16_eptm2"]
+[ext_resource type="Texture2D" uid="uid://cf00nlwosdi83" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/10-Dead Hit/3.png" id="17_ltauj"]
+[ext_resource type="Texture2D" uid="uid://7tea5jhuk5kx" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/10-Dead Hit/4.png" id="18_ey1mq"]
+[ext_resource type="Texture2D" uid="uid://bp1vg7wavyat2" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/10-Dead Hit/5.png" id="19_htttx"]
+[ext_resource type="Texture2D" uid="uid://b5hfnr23sy73m" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/10-Dead Hit/6.png" id="20_k4lfi"]
+[ext_resource type="Texture2D" uid="uid://x1kfe1ojgl63" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/1.png" id="21_wlvyj"]
+[ext_resource type="Texture2D" uid="uid://cdq8uxq4vi4tw" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/2.png" id="22_wqsk0"]
+[ext_resource type="Texture2D" uid="uid://b4gjfyspdmv7b" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/3.png" id="23_2hxws"]
+[ext_resource type="Texture2D" uid="uid://cntuck7wupwfl" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/4.png" id="24_1ubb4"]
+[ext_resource type="Texture2D" uid="uid://0jpq6va37oyg" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/5.png" id="25_kyx5k"]
+[ext_resource type="Texture2D" uid="uid://ci214txtmk8kg" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/6.png" id="26_xpsvm"]
+[ext_resource type="Texture2D" uid="uid://ckyag3ttw5pwp" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/7.png" id="27_sviyf"]
+[ext_resource type="Texture2D" uid="uid://b7ryk2cnwkq45" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/9-Hit/8.png" id="28_kkua2"]
+[ext_resource type="Texture2D" uid="uid://flg5kh74swio" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/1.png" id="29_o7ocg"]
+[ext_resource type="Texture2D" uid="uid://b70m5133as1a0" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/2.png" id="30_e6gb0"]
+[ext_resource type="Texture2D" uid="uid://dpegtggd7yysb" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/3.png" id="31_hskev"]
+[ext_resource type="Texture2D" uid="uid://b1rq5yv3h4nmm" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/4.png" id="32_j867e"]
+[ext_resource type="Texture2D" uid="uid://ckleojatnfu8m" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/5.png" id="33_j6shc"]
+[ext_resource type="Texture2D" uid="uid://yjmm06ygvw22" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/6.png" id="34_xnekk"]
+[ext_resource type="Texture2D" uid="uid://bhjkqenfd6b18" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/7.png" id="35_mld36"]
+[ext_resource type="Texture2D" uid="uid://ck0vtueljq6g5" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/8.png" id="36_w2akj"]
+[ext_resource type="Texture2D" uid="uid://cbim1xs4a8mtg" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/9.png" id="37_oqyar"]
+[ext_resource type="Texture2D" uid="uid://biew4dotbafu4" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/10.png" id="38_yny7f"]
+[ext_resource type="Texture2D" uid="uid://dcju0i4ets1m1" path="res://animal_decor/Enemy_V2/3-Enemy-Cucumber/8-Blow the wick/11.png" id="39_ag8u1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2yqeg"]
+radius = 9.0
+height = 42.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yow4d"]
+size = Vector2(47.25, 10)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yow4d"]
+radius = 9.0
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_35mws"]
+resource_name = "Run"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334, 0.43333334, 0.53333336, 0.6333333, 0.73333335, 0.8333333, 0.93333334, 1.0333333, 1.1333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_mwglx"), ExtResource("4_p8vrx"), ExtResource("5_0wchm"), ExtResource("6_ayywm"), ExtResource("7_jqmki"), ExtResource("8_ki558"), ExtResource("9_j3blr"), ExtResource("10_w2yfk"), ExtResource("11_t6ht5"), ExtResource("12_4fxbj"), ExtResource("13_tbx7q"), ExtResource("14_7d2ie")]
+}
+
+[sub_resource type="Animation" id="Animation_gtisj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_l7nct")]
+}
+
+[sub_resource type="Animation" id="Animation_4wpdm"]
+resource_name = "Die"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334, 0.43333334, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_pe67w"), ExtResource("16_eptm2"), ExtResource("17_ltauj"), ExtResource("18_ey1mq"), ExtResource("19_htttx"), ExtResource("20_k4lfi")]
+}
+
+[sub_resource type="Animation" id="Animation_iipxv"]
+resource_name = "Hit"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334, 0.43333334, 0.53333336, 0.6333333, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_wlvyj"), ExtResource("22_wqsk0"), ExtResource("23_2hxws"), ExtResource("24_1ubb4"), ExtResource("25_kyx5k"), ExtResource("26_xpsvm"), ExtResource("27_sviyf"), ExtResource("28_kkua2")]
+}
+
+[sub_resource type="Animation" id="Animation_ta81t"]
+resource_name = "Blow"
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334, 0.43333334, 0.53333336, 0.6333333, 0.73333335, 0.8333333, 0.93333334, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("29_o7ocg"), ExtResource("30_e6gb0"), ExtResource("31_hskev"), ExtResource("32_j867e"), ExtResource("33_j6shc"), ExtResource("34_xnekk"), ExtResource("35_mld36"), ExtResource("36_w2akj"), ExtResource("37_oqyar"), ExtResource("38_yny7f"), ExtResource("39_ag8u1")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7tgl"]
+_data = {
+&"Blow": SubResource("Animation_ta81t"),
+&"Die": SubResource("Animation_4wpdm"),
+&"Hit": SubResource("Animation_iipxv"),
+&"RESET": SubResource("Animation_gtisj"),
+&"Run": SubResource("Animation_35mws")
+}
+
+[node name="push_guy" type="CharacterBody2D" groups=["Enemies", "Resettable"]]
+collision_layer = 2
+script = ExtResource("1_yow4d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.99999905, 1)
+scale = Vector2(0.65625, 0.61764705)
+texture = ExtResource("1_l7nct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_2yqeg")
+
+[node name="BlowArea" type="Area2D" parent="." groups=["Enemies"]]
+position = Vector2(-38, -2)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlowArea"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_yow4d")
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_yow4d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e7tgl")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-12, 0)
+target_position = Vector2(0, 25)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="BlowSound" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="BlowArea" to="." method="_on_blow_area_body_entered"]
+[connection signal="body_exited" from="BlowArea" to="." method="_on_blow_area_body_exited"]
+[connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]

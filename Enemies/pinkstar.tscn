@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc240l0dxmbpq"]
+[gd_scene load_steps=26 format=3 uid="uid://cc240l0dxmbpq"]
 
 [ext_resource type="Texture2D" uid="uid://b0gejx66rojie" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/01-Idle/Idle 01.png" id="1_o1mpc"]
 [ext_resource type="Script" uid="uid://jew3trvmmgap" path="res://Scence/WorldScence/Scripts/Enemies/pinkstar.gd" id="1_xhviq"]
@@ -12,12 +12,65 @@
 [ext_resource type="Texture2D" uid="uid://bnmmwjgamhhv0" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/09-Dead Hit/Dead Hit 02.png" id="9_x0npt"]
 [ext_resource type="Texture2D" uid="uid://8app7vudj8d7" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/09-Dead Hit/Dead Hit 03.png" id="10_1bm75"]
 [ext_resource type="Texture2D" uid="uid://c30wtn5tjclcw" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/09-Dead Hit/Dead Hit 04.png" id="11_5pyo4"]
+[ext_resource type="Texture2D" uid="uid://xv0g0c1ehva3" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/08-Hit/Hit 01.png" id="13_60gdk"]
+[ext_resource type="Texture2D" uid="uid://bm5ro3tw0enok" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/08-Hit/Hit 02.png" id="14_781mg"]
+[ext_resource type="Texture2D" uid="uid://bmemodaou5c7h" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/08-Hit/Hit 03.png" id="15_po405"]
+[ext_resource type="Texture2D" uid="uid://vlelle0fi5dx" path="res://Treasure Hunters/Enemy/Sprites/Pink Star/08-Hit/Hit 04.png" id="16_x0npt"]
+[ext_resource type="AudioStream" uid="uid://dt6f8xcrkt7xx" path="res://Music/SFX/perfect-street-fighter-sound-effect (mp3cut.net).ogg" id="17_781mg"]
+[ext_resource type="AudioStream" uid="uid://bmhwm4bluonm3" path="res://Music/SFX/aaughmp3 (mp3cut.net).ogg" id="18_po405"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u34nb"]
 height = 24.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fujt"]
 height = 24.0
+
+[sub_resource type="Animation" id="Animation_j2qrr"]
+resource_name = "Die"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.26666668, 0.5, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_po405"), ExtResource("9_x0npt"), ExtResource("10_1bm75"), ExtResource("11_5pyo4")]
+}
+
+[sub_resource type="Animation" id="Animation_1bm75"]
+resource_name = "Hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_60gdk"), ExtResource("14_781mg"), ExtResource("15_po405"), ExtResource("16_x0npt")]
+}
+
+[sub_resource type="Animation" id="Animation_5yuxh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_o1mpc")]
+}
 
 [sub_resource type="Animation" id="Animation_lp6fu"]
 resource_name = "Run"
@@ -36,45 +89,15 @@ tracks/0/keys = {
 "values": [ExtResource("2_xhviq"), ExtResource("3_70y6t"), ExtResource("4_jm60j"), ExtResource("5_jq2mm"), ExtResource("6_60gdk"), ExtResource("7_781mg")]
 }
 
-[sub_resource type="Animation" id="Animation_5yuxh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_o1mpc")]
-}
-
-[sub_resource type="Animation" id="Animation_j2qrr"]
-resource_name = "Die"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 0.26666668, 0.5, 0.73333335),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("8_po405"), ExtResource("9_x0npt"), ExtResource("10_1bm75"), ExtResource("11_5pyo4")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3kl62"]
 _data = {
 &"Die": SubResource("Animation_j2qrr"),
+&"Hit": SubResource("Animation_1bm75"),
 &"RESET": SubResource("Animation_5yuxh"),
 &"Run": SubResource("Animation_lp6fu")
 }
 
-[node name="pinkstar" type="CharacterBody2D" groups=["Enemies"]]
+[node name="pinkstar" type="CharacterBody2D" groups=["Enemies", "Resettable"]]
 collision_layer = 2
 script = ExtResource("1_xhviq")
 
@@ -99,5 +122,13 @@ libraries = {
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-11, 0)
 target_position = Vector2(0, 15)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_781mg")
+bus = &"DeathEnemies"
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_po405")
+bus = &"HitEnemies"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

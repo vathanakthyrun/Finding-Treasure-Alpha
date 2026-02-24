@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://da1scen4fbw4l"]
+
+[ext_resource type="Texture2D" uid="uid://bpbxs2osqvf82" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/1.png" id="1_6030e"]
+[ext_resource type="Script" uid="uid://c62m6haf02r7e" path="res://Scence/WorldScence/Scripts/decorScript/shipsail.gd" id="1_t25ly"]
+[ext_resource type="Texture2D" uid="uid://cxp55wotp0j7p" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/2.png" id="3_svpj1"]
+[ext_resource type="Texture2D" uid="uid://d3dg4m741mg63" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/3.png" id="4_w80q7"]
+[ext_resource type="Texture2D" uid="uid://bqqfkciquemwn" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/Wind/4.png" id="5_08kl8"]
+
+[sub_resource type="Animation" id="Animation_28tdo"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.2, 0.4, 0.56666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_6030e"), ExtResource("3_svpj1"), ExtResource("4_w80q7"), ExtResource("5_08kl8")]
+}
+
+[sub_resource type="Animation" id="Animation_uifaq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_6030e")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46ncx"]
+_data = {
+&"Idle": SubResource("Animation_28tdo"),
+&"RESET": SubResource("Animation_uifaq")
+}
+
+[node name="shipsail" type="Node2D"]
+script = ExtResource("1_t25ly")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.2142857, 1.26)
+texture = ExtResource("1_6030e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_46ncx")
+}

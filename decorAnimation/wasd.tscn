@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://berjntki28h61"]
+
+[ext_resource type="Texture2D" uid="uid://cj2oix0eear7e" path="res://animal_decor/wasd_pixel_transparent.png" id="1_jyuws"]
+
+[node name="WASD" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10.999996, -3.0000076)
+scale = Vector2(0.20638023, 0.18408206)
+texture = ExtResource("1_jyuws")

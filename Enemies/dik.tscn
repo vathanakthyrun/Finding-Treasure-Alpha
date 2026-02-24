@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://bogcsmcm23n2c"]
+
+[ext_resource type="Texture2D" uid="uid://c7j4pwnnwei0g" path="res://Treasure Hunters/Enemy/Sprites/Dik/Escape_Dik_Running-2.png.png" id="1_c1140"]
+[ext_resource type="Script" uid="uid://b65c1cwayb8fn" path="res://Scence/WorldScence/Scripts/Enemies/dik.gd" id="1_xi2q8"]
+[ext_resource type="Texture2D" uid="uid://cxlekm0ctk31u" path="res://Treasure Hunters/Enemy/Sprites/Dik/Escape_Dik_Running-1.png.png" id="2_xi2q8"]
+[ext_resource type="Texture2D" uid="uid://i8q7uadn2ql" path="res://Treasure Hunters/Enemy/Sprites/Dik/Escape_Dik_Running-3.png.png" id="3_2vfh2"]
+[ext_resource type="Texture2D" uid="uid://bqlldraqyn5nn" path="res://Treasure Hunters/Enemy/Sprites/Dik/Escape_Dik_Running-4.png.png" id="4_3tack"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfgd4"]
+size = Vector2(21, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh31g"]
+size = Vector2(21, 19)
+
+[sub_resource type="Animation" id="Animation_etgd6"]
+resource_name = "Run"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.26666668, 0.46666667, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_xi2q8"), ExtResource("1_c1140"), ExtResource("3_2vfh2"), ExtResource("4_3tack")]
+}
+
+[sub_resource type="Animation" id="Animation_hlq10"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_c1140")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i8a5g"]
+_data = {
+&"RESET": SubResource("Animation_hlq10"),
+&"Run": SubResource("Animation_etgd6")
+}
+
+[node name="Dik" type="CharacterBody2D" groups=["Enemies"]]
+script = ExtResource("1_xi2q8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c1140")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 3.5)
+shape = SubResource("RectangleShape2D_pfgd4")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.5, 3.5)
+shape = SubResource("RectangleShape2D_qh31g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i8a5g")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(9, 0)
+target_position = Vector2(0, 15)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://01j8pn0guxsr"]
+
+[ext_resource type="Texture2D" uid="uid://d3jyladpr7c7p" path="res://animal_decor/Dinosaur_skeleton_full_dark_shadow.png" id="1_a2x1t"]
+
+[node name="DinoSkull" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a2x1t")

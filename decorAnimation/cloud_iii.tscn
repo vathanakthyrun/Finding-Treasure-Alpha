@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfvg6jcqtuqc5"]
+
+[ext_resource type="Texture2D" uid="uid://464rsvkwp1ha" path="res://Treasure Hunters/TileSet/Sprites/Background/Small Cloud 3.png" id="1_lq3cs"]
+
+[node name="cloud-III" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lq3cs")
