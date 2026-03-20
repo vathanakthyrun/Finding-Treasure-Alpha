@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://djr47cv1ru274"]
+
+[ext_resource type="Texture2D" uid="uid://hx52c4qg78du" path="res://animal_decor/Jkey.png" id="1_ij2ne"]
+
+[node name="Jkey" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.09716796, 0.1052246)
+texture = ExtResource("1_ij2ne")

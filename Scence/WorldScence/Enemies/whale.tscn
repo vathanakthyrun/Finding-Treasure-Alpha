@@ -1,0 +1,150 @@
+[gd_scene load_steps=39 format=3 uid="uid://b2qayl46kwe31"]
+
+[ext_resource type="Script" uid="uid://cxgc15qqcoywx" path="res://Scence/WorldScence/Scripts/Enemies/whale.gd" id="1_vi3tg"]
+[ext_resource type="Texture2D" uid="uid://kdcr82qy34lt" path="res://used_asset/Enemy_V2/6-Enemy-Whale/10-Dead Hit/1.png" id="2_6mih1"]
+[ext_resource type="Texture2D" uid="uid://dcohifsbux3db" path="res://used_asset/Enemy_V2/6-Enemy-Whale/10-Dead Hit/2.png" id="3_k6rpo"]
+[ext_resource type="Texture2D" uid="uid://c45tblvo7ej20" path="res://used_asset/Enemy_V2/6-Enemy-Whale/10-Dead Hit/3.png" id="4_f23ob"]
+[ext_resource type="Texture2D" uid="uid://c23v8eehqed8w" path="res://used_asset/Enemy_V2/6-Enemy-Whale/10-Dead Hit/4.png" id="5_ay088"]
+[ext_resource type="Texture2D" uid="uid://dx27nmikb2ueb" path="res://used_asset/Enemy_V2/6-Enemy-Whale/10-Dead Hit/5.png" id="6_83cmx"]
+[ext_resource type="Texture2D" uid="uid://h5qt6wqnqe86" path="res://used_asset/Enemy_V2/6-Enemy-Whale/10-Dead Hit/6.png" id="7_ika3r"]
+[ext_resource type="Texture2D" uid="uid://ct0e5oldui0n" path="res://used_asset/Enemy_V2/6-Enemy-Whale/9-Hit/1.png" id="8_vrym6"]
+[ext_resource type="Texture2D" uid="uid://bdhsjiu488yie" path="res://used_asset/Enemy_V2/6-Enemy-Whale/9-Hit/2.png" id="9_5dt0t"]
+[ext_resource type="Texture2D" uid="uid://djpwwi87xxcip" path="res://used_asset/Enemy_V2/6-Enemy-Whale/9-Hit/3.png" id="10_u1fg6"]
+[ext_resource type="Texture2D" uid="uid://btt7w3j40c1qn" path="res://used_asset/Enemy_V2/6-Enemy-Whale/9-Hit/4.png" id="11_fy5gm"]
+[ext_resource type="Texture2D" uid="uid://c84y6nysodxkq" path="res://used_asset/Enemy_V2/6-Enemy-Whale/9-Hit/5.png" id="12_d5bb1"]
+[ext_resource type="Texture2D" uid="uid://dql2pmgr3s0bd" path="res://used_asset/Enemy_V2/6-Enemy-Whale/9-Hit/6.png" id="13_30ia8"]
+[ext_resource type="Texture2D" uid="uid://d1qs073nhfdcx" path="res://used_asset/Enemy_V2/6-Enemy-Whale/9-Hit/7.png" id="14_8ivjp"]
+[ext_resource type="Texture2D" uid="uid://wq6y50evoxqi" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/1.png" id="15_mye7l"]
+[ext_resource type="Texture2D" uid="uid://8k74hdjbdf62" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/2.png" id="16_hbll4"]
+[ext_resource type="Texture2D" uid="uid://bf44opn8h68k" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/3.png" id="17_rdbwb"]
+[ext_resource type="Texture2D" uid="uid://d4nmk34ykrdpa" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/4.png" id="18_pw1es"]
+[ext_resource type="Texture2D" uid="uid://wwxemogg384x" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/5.png" id="19_xuqwm"]
+[ext_resource type="Texture2D" uid="uid://ck5n5grn7y66b" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/6.png" id="20_2iscv"]
+[ext_resource type="Texture2D" uid="uid://dsct13bvf8jtb" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/7.png" id="21_254kh"]
+[ext_resource type="Texture2D" uid="uid://bgs6lqb1jg8dp" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/8.png" id="22_6vecr"]
+[ext_resource type="Texture2D" uid="uid://rg7gtdj8ldpr" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/9.png" id="23_0irb2"]
+[ext_resource type="Texture2D" uid="uid://swaoe8jqahvp" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/10.png" id="24_q0r4j"]
+[ext_resource type="Texture2D" uid="uid://cp4wi4hd0crni" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/11.png" id="25_t6m8w"]
+[ext_resource type="Texture2D" uid="uid://bqmgs5lnajuah" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/12.png" id="26_k1ipl"]
+[ext_resource type="Texture2D" uid="uid://byrq831a5yesd" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/13.png" id="27_pw37j"]
+[ext_resource type="Texture2D" uid="uid://b1wi0qt7ax3rp" path="res://used_asset/Enemy_V2/6-Enemy-Whale/2-Run/14.png" id="28_yksxi"]
+[ext_resource type="AudioStream" uid="uid://dt6f8xcrkt7xx" path="res://used_asset/Music/SFX/perfect-street-fighter-sound-effect (mp3cut.net).ogg" id="30_k6rpo"]
+[ext_resource type="AudioStream" uid="uid://bmhwm4bluonm3" path="res://used_asset/Music/SFX/aaughmp3 (mp3cut.net).ogg" id="31_f23ob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtk83"]
+size = Vector2(27, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alcki"]
+size = Vector2(27, 18)
+
+[sub_resource type="Animation" id="Animation_e5ldh"]
+resource_name = "Die"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_6mih1"), ExtResource("3_k6rpo"), ExtResource("4_f23ob"), ExtResource("5_ay088"), ExtResource("6_83cmx"), ExtResource("7_ika3r")]
+}
+
+[sub_resource type="Animation" id="Animation_xnvme"]
+resource_name = "Hit"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_vrym6"), ExtResource("9_5dt0t"), ExtResource("10_u1fg6"), ExtResource("11_fy5gm"), ExtResource("12_d5bb1"), ExtResource("13_30ia8"), ExtResource("14_8ivjp")]
+}
+
+[sub_resource type="Resource" id="Resource_alcki"]
+metadata/__load_path__ = "res://Enemy_V2/6-Enemy-Whale/1-Idle/1.png"
+
+[sub_resource type="Animation" id="Animation_hyw80"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_alcki")]
+}
+
+[sub_resource type="Animation" id="Animation_m2wqn"]
+resource_name = "Run"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_mye7l"), ExtResource("16_hbll4"), ExtResource("17_rdbwb"), ExtResource("18_pw1es"), ExtResource("19_xuqwm"), ExtResource("20_2iscv"), ExtResource("21_254kh"), ExtResource("22_6vecr"), ExtResource("23_0irb2"), ExtResource("24_q0r4j"), ExtResource("25_t6m8w"), ExtResource("26_k1ipl"), ExtResource("27_pw37j"), ExtResource("28_yksxi")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_veu8w"]
+_data = {
+&"Die": SubResource("Animation_e5ldh"),
+&"Hit": SubResource("Animation_xnvme"),
+&"RESET": SubResource("Animation_hyw80"),
+&"Run": SubResource("Animation_m2wqn")
+}
+
+[node name="Whale" type="CharacterBody2D" groups=["Enemies", "Resettable"]]
+collision_layer = 2
+script = ExtResource("1_vi3tg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.5, -0.1250006)
+scale = Vector2(0.5147059, 0.48369563)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_vtk83")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_alcki")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_veu8w")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-14, 0)
+target_position = Vector2(0, 15)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_k6rpo")
+bus = &"DeathEnemies"
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_f23ob")
+bus = &"HitEnemies"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

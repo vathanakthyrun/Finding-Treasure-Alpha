@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6nlp4des1r2i"]
+
+[ext_resource type="Script" uid="uid://yd4f7kudvx3j" path="res://Scence/WorldScence/Scripts/decorScript/crabdecor_2.gd" id="1_6wutj"]
+[ext_resource type="Texture2D" uid="uid://b6onda1vaa43h" path="res://used_asset/crab.png" id="1_dkjs1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wutj"]
+atlas = ExtResource("1_dkjs1")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3o2p"]
+atlas = ExtResource("1_dkjs1")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksox2"]
+atlas = ExtResource("1_dkjs1")
+region = Rect2(32, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwa5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wutj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3o2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksox2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[node name="crabdecor" type="CharacterBody2D"]
+script = ExtResource("1_6wutj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bwa5m")
+animation = &"Idle"
+frame_progress = 0.066265784

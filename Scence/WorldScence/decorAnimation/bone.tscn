@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://2i0u6du0ws6j"]
+
+[ext_resource type="Texture2D" uid="uid://cqwxqyt1e5wfr" path="res://animal_decor/bone.png" id="1_0hadc"]
+
+[node name="bone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+scale = Vector2(0.22555748, 0.1838829)
+texture = ExtResource("1_0hadc")

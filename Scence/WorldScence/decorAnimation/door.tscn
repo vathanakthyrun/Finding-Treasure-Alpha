@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://3d60cwa5p36q"]
+
+[ext_resource type="Script" uid="uid://diuppex74rjga" path="res://Scence/WorldScence/Scripts/decorScript/door.gd" id="1_5up8m"]
+[ext_resource type="Texture2D" uid="uid://br3qm6tutxamt" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Door/Opening/01.png" id="1_7x4d6"]
+[ext_resource type="Texture2D" uid="uid://dtnm8wqq4pohd" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Door/Opening/02.png" id="2_5up8m"]
+[ext_resource type="Texture2D" uid="uid://2dfa2gg26n4r" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Door/Opening/03.png" id="3_062iy"]
+[ext_resource type="Texture2D" uid="uid://1qgp1gj8ysge" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Door/Opening/04.png" id="4_0r0pm"]
+[ext_resource type="Texture2D" uid="uid://blxscoalvbi7r" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Door/Opening/05.png" id="5_yuvyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mwfo"]
+size = Vector2(48, 51)
+
+[sub_resource type="Animation" id="Animation_oxo3q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_7x4d6")]
+}
+
+[sub_resource type="Animation" id="Animation_ep3gk"]
+resource_name = "open"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_7x4d6"), ExtResource("2_5up8m"), ExtResource("3_062iy"), ExtResource("4_0r0pm"), ExtResource("5_yuvyw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oebm2"]
+_data = {
+&"RESET": SubResource("Animation_oxo3q"),
+&"open": SubResource("Animation_ep3gk")
+}
+
+[node name="Door" type="Node2D" groups=["doors"]]
+script = ExtResource("1_5up8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7x4d6")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 7.5)
+shape = SubResource("RectangleShape2D_3mwfo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oebm2")
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -41.0
+offset_right = 38.0
+offset_bottom = -18.0
+text = "[E] Enter "
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://dtnuj2ii3qf0w"]
+
+[ext_resource type="Texture2D" uid="uid://cah4kraojqkcv" path="res://Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/01.png" id="1_74cwp"]
+[ext_resource type="Script" uid="uid://bekmjc1e0bamv" path="res://Scence/WorldScence/Scripts/Interactable/potion.gd" id="1_ytde0"]
+[ext_resource type="Texture2D" uid="uid://8epfi6xb3bbe" path="res://Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/02.png" id="3_uodxc"]
+[ext_resource type="Texture2D" uid="uid://dk8fh56gjgpt0" path="res://Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/03.png" id="4_kqypc"]
+[ext_resource type="Texture2D" uid="uid://dxvsaadfm037p" path="res://Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/04.png" id="5_fvrnv"]
+[ext_resource type="Texture2D" uid="uid://cyyux2kp12544" path="res://Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/05.png" id="6_osx0o"]
+[ext_resource type="Texture2D" uid="uid://gbjt5aa27ggc" path="res://Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/06.png" id="7_sqd3l"]
+[ext_resource type="Texture2D" uid="uid://8yrsnbq8f4io" path="res://Treasure Hunters/Pirate Treasure/Sprites/Green Bottle/07.png" id="8_0ctet"]
+[ext_resource type="AudioStream" uid="uid://dywt05wtbgx33" path="res://used_asset/Music/SFX/potionsound.ogg" id="9_kqypc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ytde0"]
+radius = 9.0
+
+[sub_resource type="Animation" id="Animation_4docx"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.23333333, 0.36666667, 0.5, 0.6333333, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_74cwp"), ExtResource("3_uodxc"), ExtResource("4_kqypc"), ExtResource("5_fvrnv"), ExtResource("6_osx0o"), ExtResource("7_sqd3l"), ExtResource("8_0ctet")]
+}
+
+[sub_resource type="Animation" id="Animation_71r5p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_74cwp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ao1t"]
+_data = {
+&"Idle": SubResource("Animation_4docx"),
+&"RESET": SubResource("Animation_71r5p")
+}
+
+[node name="Potion" type="Node2D" groups=["Resettable"]]
+script = ExtResource("1_ytde0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_74cwp")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ytde0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8ao1t")
+}
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kqypc")
+bus = &"potion"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

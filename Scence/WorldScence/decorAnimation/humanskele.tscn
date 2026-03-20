@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bynl7i24b30ns"]
+
+[ext_resource type="Texture2D" uid="uid://dbarncuxukctw" path="res://animal_decor/Human_skeleton_dark_shadow.png" id="1_ov611"]
+
+[node name="humanskele" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.7683716e-07)
+scale = Vector2(1.7499999, 1.8281249)
+texture = ExtResource("1_ov611")

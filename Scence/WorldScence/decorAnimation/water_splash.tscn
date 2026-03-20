@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqpprrgnn0vuw"]
+
+[ext_resource type="Script" uid="uid://bn87rxhhm2aoq" path="res://Scence/WorldScence/Scripts/decorScript/water_splash.gd" id="1_6aoit"]
+[ext_resource type="Texture2D" uid="uid://dwkxvem1p1dyx" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/1.png" id="1_hnhrq"]
+[ext_resource type="Texture2D" uid="uid://bnsrt3s7socrx" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/2.png" id="2_6aoit"]
+[ext_resource type="Texture2D" uid="uid://bfob67ueav47g" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/3.png" id="3_78w6b"]
+[ext_resource type="Texture2D" uid="uid://bp3i51iplmryx" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/4.png" id="4_6p2tp"]
+[ext_resource type="Texture2D" uid="uid://bc6hone40wxuu" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/5.png" id="5_1hxvt"]
+
+[sub_resource type="Animation" id="Animation_t66ar"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666664, 0.96666664, 1.4666667, 1.9333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_hnhrq"), ExtResource("2_6aoit"), ExtResource("3_78w6b"), ExtResource("4_6p2tp"), ExtResource("5_1hxvt")]
+}
+
+[sub_resource type="Animation" id="Animation_hmxuj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_hnhrq")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jl82i"]
+_data = {
+&"Idle": SubResource("Animation_t66ar"),
+&"RESET": SubResource("Animation_hmxuj")
+}
+
+[node name="waterSplash" type="Node2D"]
+script = ExtResource("1_6aoit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hnhrq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jl82i")
+}

@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddths6ecur8eh"]
+
+[ext_resource type="Script" uid="uid://bdbkdlvhp1d2q" path="res://Scence/WorldScence/Scripts/Enemies/shark.gd" id="1_fa5p3"]
+[ext_resource type="Texture2D" uid="uid://crk3u1k8jp1qk" path="res://used_asset/shark.png" id="1_p6vna"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa5p3"]
+atlas = ExtResource("1_p6vna")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o258"]
+atlas = ExtResource("1_p6vna")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yssg"]
+atlas = ExtResource("1_p6vna")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdb87"]
+atlas = ExtResource("1_p6vna")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdj0c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa5p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o258")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yssg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdb87")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwgo2"]
+size = Vector2(41, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn7w1"]
+size = Vector2(41, 16)
+
+[node name="shark" type="CharacterBody2D" groups=["Enemies", "Resettable"]]
+collision_layer = 2
+script = ExtResource("1_fa5p3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bdj0c")
+animation = &"Run"
+frame_progress = 0.63375324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 4)
+shape = SubResource("RectangleShape2D_iwgo2")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.5, 4)
+shape = SubResource("RectangleShape2D_rn7w1")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-26, 0)
+target_position = Vector2(0, 23)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

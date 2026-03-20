@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6h6icrlgiiv1"]
+
+[ext_resource type="Script" uid="uid://hb56u65w8uey" path="res://Scence/WorldScence/Scripts/decorScript/candlelight.gd" id="1_aghn6"]
+[ext_resource type="Texture2D" uid="uid://dhtmklsy8dh27" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle Light/01.png" id="1_bts0h"]
+[ext_resource type="Texture2D" uid="uid://dnkugrguyslo0" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle Light/02.png" id="2_aghn6"]
+[ext_resource type="Texture2D" uid="uid://f3y84h7ye2c5" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle Light/03.png" id="3_w06k1"]
+[ext_resource type="Texture2D" uid="uid://dcemgdh2hs4bg" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle Light/04.png" id="4_k15wk"]
+
+[sub_resource type="Animation" id="Animation_x6qp3"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_bts0h"), ExtResource("2_aghn6"), ExtResource("3_w06k1"), ExtResource("4_k15wk")]
+}
+
+[sub_resource type="Animation" id="Animation_ohrl7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_bts0h")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gegff"]
+_data = {
+&"Idle": SubResource("Animation_x6qp3"),
+&"RESET": SubResource("Animation_ohrl7")
+}
+
+[node name="candlelight" type="Node2D"]
+script = ExtResource("1_aghn6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bts0h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gegff")
+}

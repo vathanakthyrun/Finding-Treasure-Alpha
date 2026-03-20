@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://8406764afabe"]
+
+[ext_resource type="Script" uid="uid://dohriupsnox50" path="res://Scence/WorldScence/Scripts/Interactable/health_up_2.gd" id="1_0knhy"]
+[ext_resource type="Texture2D" uid="uid://qnka0xnlmcxr" path="res://used_asset/Health/ChatGPT Image Feb 8, 2026, 07_56_28 PM.png" id="1_6mi4x"]
+[ext_resource type="AudioStream" uid="uid://ctkajtvoym3x1" path="res://used_asset/Music/SFX/rizz-sound-effect.ogg" id="3_ve0i6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0knhy"]
+size = Vector2(46, 44)
+
+[node name="health_up2" type="Node2D" groups=["Resettable"]]
+script = ExtResource("1_0knhy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.06868489, 0.06811523)
+texture = ExtResource("1_6mi4x")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_0knhy")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ve0i6")
+bus = &"Rizz"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

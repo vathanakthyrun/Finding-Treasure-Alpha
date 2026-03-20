@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c78tt5ei8xvnj"]
+
+[ext_resource type="Script" uid="uid://bpcxkj73otoxo" path="res://Scence/WorldScence/Scripts/Interactable/spikes.gd" id="1_h5w0m"]
+[ext_resource type="Texture2D" uid="uid://duph2ih6lxoxf" path="res://Treasure Hunters/TileSet/Sprites/Objects/Spikes/Spikes.png" id="1_wkv5s"]
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_h5w0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wkv5s")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-14, 16, -16, 11, -13, 5, -5, 0, 3, 3, 11, 1, 15, 7, 13, 16)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

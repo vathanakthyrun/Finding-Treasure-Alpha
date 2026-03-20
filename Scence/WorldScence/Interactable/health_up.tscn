@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://hd5df6gbjc84"]
+
+[ext_resource type="Script" uid="uid://t3i8bxelxor2" path="res://Scence/WorldScence/Scripts/Interactable/health_up.gd" id="1_41pp5"]
+[ext_resource type="Texture2D" uid="uid://cyk0ujj3ey3m6" path="res://used_asset/Health/Heart_pixelart_(transparent_background).svg.png" id="2_41pp5"]
+[ext_resource type="AudioStream" uid="uid://dp0eu13xqm2gu" path="res://used_asset/Music/SFX/error_CDOxCYm.ogg" id="3_80ial"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w7ha"]
+size = Vector2(16, 16)
+
+[node name="HealthUp" type="Node2D" groups=["Resettable"]]
+script = ExtResource("1_41pp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.3841858e-07, 1.0000002)
+scale = Vector2(0.012499999, 0.01171875)
+texture = ExtResource("2_41pp5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6w7ha")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_80ial")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

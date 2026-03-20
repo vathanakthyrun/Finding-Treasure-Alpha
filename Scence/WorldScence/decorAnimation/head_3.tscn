@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbif6nv8oyucj"]
+
+[ext_resource type="Texture2D" uid="uid://bne66vw0owtfb" path="res://Treasure Hunters/TileSet/Sprites/Objects/Head 2/Attack 1/1.png" id="1_krfsd"]
+[ext_resource type="Script" uid="uid://pylanqomsnwc" path="res://Scence/WorldScence/Scripts/decorScript/head_3.gd" id="1_mg3eo"]
+[ext_resource type="Texture2D" uid="uid://mfsa80s6n0rs" path="res://Treasure Hunters/TileSet/Sprites/Objects/Head 2/Attack 1/2.png" id="2_mg3eo"]
+[ext_resource type="Texture2D" uid="uid://drj4rg6cgq77r" path="res://Treasure Hunters/TileSet/Sprites/Objects/Head 2/Attack 1/3.png" id="3_iiiqm"]
+[ext_resource type="Texture2D" uid="uid://b3amtafgjw5xr" path="res://Treasure Hunters/TileSet/Sprites/Objects/Head 2/Attack 1/4.png" id="4_ixcul"]
+[ext_resource type="Texture2D" uid="uid://kx6rgj2c0d5q" path="res://Treasure Hunters/TileSet/Sprites/Objects/Head 2/Attack 1/5.png" id="5_ta3wj"]
+[ext_resource type="Texture2D" uid="uid://bn45wdklhc7vr" path="res://Treasure Hunters/TileSet/Sprites/Objects/Head 2/Attack 1/6.png" id="6_nsxg3"]
+
+[sub_resource type="Animation" id="Animation_jpt55"]
+resource_name = "Idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.53333336, 0.8666667, 1.1666666, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_krfsd"), ExtResource("2_mg3eo"), ExtResource("3_iiiqm"), ExtResource("4_ixcul"), ExtResource("5_ta3wj"), ExtResource("6_nsxg3")]
+}
+
+[sub_resource type="Animation" id="Animation_a0bnw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_krfsd")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ighae"]
+_data = {
+&"Idle": SubResource("Animation_jpt55"),
+&"RESET": SubResource("Animation_a0bnw")
+}
+
+[node name="head_3" type="Node2D"]
+script = ExtResource("1_mg3eo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_krfsd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ighae")
+}

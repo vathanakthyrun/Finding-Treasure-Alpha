@@ -1,0 +1,172 @@
+[gd_scene load_steps=42 format=3 uid="uid://65s33lboijd4"]
+
+[ext_resource type="Texture2D" uid="uid://badrvkws3410k" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/1-Idle/1.png" id="1_68dih"]
+[ext_resource type="Script" uid="uid://r664h47kxxsf" path="res://Scence/WorldScence/Scripts/Enemies/big_guy.gd" id="1_ofdqu"]
+[ext_resource type="Texture2D" uid="uid://c3yst1deqrcqw" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/1.png" id="2_dcjox"]
+[ext_resource type="Texture2D" uid="uid://bvwhkffouxk51" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/2.png" id="3_gfpnl"]
+[ext_resource type="Texture2D" uid="uid://sofj8gtj4mr6" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/3.png" id="4_voxpp"]
+[ext_resource type="Texture2D" uid="uid://ctio2c7qpxyik" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/4.png" id="5_s00ce"]
+[ext_resource type="Texture2D" uid="uid://53ospl8g1337" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/5.png" id="6_e4x3v"]
+[ext_resource type="Texture2D" uid="uid://du7uh3giurwke" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/6.png" id="7_d77qj"]
+[ext_resource type="Texture2D" uid="uid://d4ihik5tk63w" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/7.png" id="8_q7cgy"]
+[ext_resource type="Texture2D" uid="uid://cgovpqcye413x" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/10-Run (Bomb)/8.png" id="9_hi5o4"]
+[ext_resource type="Texture2D" uid="uid://bqv0t5j5xkxf0" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/1.png" id="9_q7l8h"]
+[ext_resource type="Texture2D" uid="uid://dtljr3b40lhrw" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/2.png" id="10_6h4im"]
+[ext_resource type="Texture2D" uid="uid://dd15y2nch0baf" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/9.png" id="10_ykx0n"]
+[ext_resource type="Texture2D" uid="uid://b1xts2uofi7c0" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/3.png" id="11_nokf5"]
+[ext_resource type="Texture2D" uid="uid://dlhs5iv141sl0" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/10.png" id="11_ofdqu"]
+[ext_resource type="Texture2D" uid="uid://d1mgy1bi6yrsb" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/4.png" id="12_jofgs"]
+[ext_resource type="Texture2D" uid="uid://dnu10h5ksapg3" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/11.png" id="12_q7l8h"]
+[ext_resource type="Texture2D" uid="uid://qs23vh47abhh" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/12.png" id="13_6h4im"]
+[ext_resource type="Texture2D" uid="uid://c6ddnia26kt63" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/5.png" id="13_upbdt"]
+[ext_resource type="Texture2D" uid="uid://bvumlgvsmmu7n" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/6.png" id="14_6kaoh"]
+[ext_resource type="Texture2D" uid="uid://bk13e0jd2wv7j" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/13.png" id="14_nokf5"]
+[ext_resource type="Texture2D" uid="uid://mi6rnso0ysmo" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/14.png" id="15_jofgs"]
+[ext_resource type="Texture2D" uid="uid://w2gtiqhkgwnr" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/7.png" id="15_qrt6w"]
+[ext_resource type="Texture2D" uid="uid://igt2r2w5ofjn" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/12-Hit/8.png" id="16_funri"]
+[ext_resource type="Texture2D" uid="uid://bafpqpot470m8" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/15.png" id="16_upbdt"]
+[ext_resource type="Texture2D" uid="uid://cma0xquucd8a" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/2-Run/16.png" id="17_6kaoh"]
+[ext_resource type="Texture2D" uid="uid://b2e37hg88kufw" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/13-Dead Hit/1.png" id="18_qrt6w"]
+[ext_resource type="Texture2D" uid="uid://b6mupufk3q4y6" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/13-Dead Hit/2.png" id="19_funri"]
+[ext_resource type="Texture2D" uid="uid://bqxlojnjslbwx" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/13-Dead Hit/3.png" id="20_64jq5"]
+[ext_resource type="Texture2D" uid="uid://h32iux8wgiqm" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/13-Dead Hit/4.png" id="21_dyuol"]
+[ext_resource type="Texture2D" uid="uid://8tdftd66o4a1" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/13-Dead Hit/5.png" id="22_e2gbl"]
+[ext_resource type="Texture2D" uid="uid://beqek1ico4cia" path="res://used_asset/Enemy_V2/4-Enemy-Big Guy/13-Dead Hit/6.png" id="23_xv8ay"]
+[ext_resource type="AudioStream" uid="uid://dt6f8xcrkt7xx" path="res://used_asset/Music/SFX/perfect-street-fighter-sound-effect (mp3cut.net).ogg" id="33_6h4im"]
+[ext_resource type="AudioStream" uid="uid://bmhwm4bluonm3" path="res://used_asset/Music/SFX/aaughmp3 (mp3cut.net).ogg" id="34_nokf5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wday0"]
+radius = 22.0
+height = 68.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_caric"]
+radius = 24.0
+height = 68.0
+
+[sub_resource type="Animation" id="Animation_o2xyn"]
+resource_name = "Die"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334, 0.43333334, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_qrt6w"), ExtResource("19_funri"), ExtResource("20_64jq5"), ExtResource("21_dyuol"), ExtResource("22_e2gbl"), ExtResource("23_xv8ay")]
+}
+
+[sub_resource type="Animation" id="Animation_ejegi"]
+resource_name = "Hit"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334, 0.43333334, 0.53333336, 0.6333333, 0.73333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_q7l8h"), ExtResource("10_6h4im"), ExtResource("11_nokf5"), ExtResource("12_jofgs"), ExtResource("13_upbdt"), ExtResource("14_6kaoh"), ExtResource("15_qrt6w"), ExtResource("16_funri")]
+}
+
+[sub_resource type="Animation" id="Animation_6wstx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_68dih")]
+}
+
+[sub_resource type="Animation" id="Animation_74vce"]
+resource_name = "Run"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334, 0.43333334, 0.53333336, 0.6333333, 0.73333335, 0.8333333, 0.93333334, 1.0333333, 1.1333333, 1.2333333, 1.3333334, 1.4333333, 1.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_dcjox"), ExtResource("3_gfpnl"), ExtResource("4_voxpp"), ExtResource("5_s00ce"), ExtResource("6_e4x3v"), ExtResource("7_d77qj"), ExtResource("8_q7cgy"), ExtResource("9_hi5o4"), ExtResource("10_ykx0n"), ExtResource("11_ofdqu"), ExtResource("12_q7l8h"), ExtResource("13_6h4im"), ExtResource("14_nokf5"), ExtResource("15_jofgs"), ExtResource("16_upbdt"), ExtResource("17_6kaoh")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.43333334, 1.2333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"step_shake"
+}, {
+"args": [],
+"method": &"step_shake"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uo12j"]
+_data = {
+&"Die": SubResource("Animation_o2xyn"),
+&"Hit": SubResource("Animation_ejegi"),
+&"RESET": SubResource("Animation_6wstx"),
+&"Run": SubResource("Animation_74vce")
+}
+
+[node name="BigGuy" type="CharacterBody2D" groups=["Enemies", "Resettable"]]
+script = ExtResource("1_ofdqu")
+move_speed = 30.0
+max_health = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-13, 3)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_68dih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 6)
+shape = SubResource("CapsuleShape2D_wday0")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6, 6)
+shape = SubResource("CapsuleShape2D_caric")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uo12j")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-39, 1)
+target_position = Vector2(0, 40)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_6h4im")
+bus = &"DeathEnemies"
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_nokf5")
+bus = &"HitEnemies"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

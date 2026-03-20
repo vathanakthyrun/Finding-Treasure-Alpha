@@ -1,0 +1,77 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwr02kbnbxcxh"]
+
+[ext_resource type="Texture2D" uid="uid://cofv4vddjbqui" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/01.png" id="1_qrnbc"]
+[ext_resource type="Script" uid="uid://b4aj542ll1lw5" path="res://Scence/WorldScence/Scripts/Interactable/extralife.gd" id="1_x1a21"]
+[ext_resource type="Texture2D" uid="uid://xax257lxumqs" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/02.png" id="2_x1a21"]
+[ext_resource type="Texture2D" uid="uid://bnk7e5napyrjm" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/03.png" id="3_x5cel"]
+[ext_resource type="Texture2D" uid="uid://bcu0ofejmahni" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/04.png" id="4_unhys"]
+[ext_resource type="Texture2D" uid="uid://be46o1htkde2g" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/05.png" id="5_pacjn"]
+[ext_resource type="Texture2D" uid="uid://bkatmvvixgo1m" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/06.png" id="6_64ikg"]
+[ext_resource type="Texture2D" uid="uid://c24n6eqh8ga12" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/07.png" id="7_btyxy"]
+[ext_resource type="Texture2D" uid="uid://cjreftna4toun" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/08.png" id="8_8syto"]
+[ext_resource type="AudioStream" uid="uid://bhh00i208ygh3" path="res://used_asset/Music/SFX/botao-do-whatsapp.ogg" id="10_x5cel"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5cel"]
+radius = 7.071068
+
+[sub_resource type="Animation" id="Animation_wyu4n"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_qrnbc"), ExtResource("2_x1a21"), ExtResource("3_x5cel"), ExtResource("4_unhys"), ExtResource("5_pacjn"), ExtResource("6_64ikg"), ExtResource("7_btyxy"), ExtResource("8_8syto")]
+}
+
+[sub_resource type="Animation" id="Animation_lt64o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_qrnbc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0nvs"]
+_data = {
+&"Idle": SubResource("Animation_wyu4n"),
+&"RESET": SubResource("Animation_lt64o")
+}
+
+[node name="extralife" type="Node2D" groups=["Resettable"]]
+script = ExtResource("1_x1a21")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qrnbc")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 5)
+shape = SubResource("CircleShape2D_x5cel")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m0nvs")
+}
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_x5cel")
+bus = &"extralife"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

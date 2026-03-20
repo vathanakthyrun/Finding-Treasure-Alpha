@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmke1xo1umdv0"]
+
+[ext_resource type="Texture2D" uid="uid://ca5dl55kdcdnk" path="res://animal_decor/shift_pixel_transparent.png" id="1_q4sok"]
+
+[node name="shift" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 5.000001)
+scale = Vector2(0.20109048, 0.18835449)
+texture = ExtResource("1_q4sok")

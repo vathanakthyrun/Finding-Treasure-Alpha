@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://i0l6ddahvnq1"]
+
+[ext_resource type="Script" uid="uid://bdc6f1uedyjrt" path="res://Scence/WorldScence/Scripts/Interactable/canon.gd" id="1_6wh43"]
+[ext_resource type="Texture2D" uid="uid://t85a0mip0del" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Idle/1.png" id="1_h4xve"]
+[ext_resource type="Texture2D" uid="uid://b8rl11n50vs1y" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/1.png" id="2_6wh43"]
+[ext_resource type="Texture2D" uid="uid://wd7vol0b2tyq" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/2.png" id="3_rad11"]
+[ext_resource type="Texture2D" uid="uid://bxbnj8sih2wuo" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/3.png" id="4_24uup"]
+[ext_resource type="Texture2D" uid="uid://dhwfacjl1qr6e" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/4.png" id="5_ml3je"]
+[ext_resource type="Texture2D" uid="uid://yde8lbojt0pd" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/5.png" id="6_wdsbv"]
+[ext_resource type="Texture2D" uid="uid://bre1amjviopqr" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/6.png" id="7_c5kc5"]
+[ext_resource type="Texture2D" uid="uid://dws4n5li26r74" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Hit/1.png" id="8_34lfg"]
+[ext_resource type="Texture2D" uid="uid://bvvvqxeme754d" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Hit/2.png" id="9_6u57m"]
+[ext_resource type="Texture2D" uid="uid://b06ruah0a1ufk" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Hit/3.png" id="10_icga8"]
+[ext_resource type="Texture2D" uid="uid://bhimypwu6k8g1" path="res://Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Hit/4.png" id="11_x356i"]
+[ext_resource type="AudioStream" uid="uid://0ciijts5tigy" path="res://used_asset/Music/SFX/cartoon-metallic-stomp.ogg" id="13_rad11"]
+[ext_resource type="AudioStream" uid="uid://x3i4yygrijy6" path="res://used_asset/Music/SFX/metal-pipe-hit.ogg" id="14_24uup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7k1k"]
+size = Vector2(20, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yt1b1"]
+size = Vector2(30, 23)
+
+[sub_resource type="Animation" id="Animation_i0l4p"]
+resource_name = "Fire"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.26666668, 0.36666667, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_6wh43"), ExtResource("3_rad11"), ExtResource("4_24uup"), ExtResource("5_ml3je"), ExtResource("6_wdsbv"), ExtResource("7_c5kc5")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fire"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_c2dcd"]
+resource_name = "Hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.1, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_34lfg"), ExtResource("9_6u57m"), ExtResource("10_icga8"), ExtResource("11_x356i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shooting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_lldc2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h4xve")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shooting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wb4wn"]
+_data = {
+&"Fire": SubResource("Animation_i0l4p"),
+&"Hit": SubResource("Animation_c2dcd"),
+&"RESET": SubResource("Animation_lldc2")
+}
+
+[node name="Canon" type="StaticBody2D" groups=["Enemies", "Resettable"]]
+script = ExtResource("1_6wh43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h4xve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_k7k1k")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_yt1b1")
+
+[node name="Firepoint" type="Marker2D" parent="."]
+position = Vector2(-15, -2)
+scale = Vector2(-1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wb4wn")
+}
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_rad11")
+bus = &"HitCannon"
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_24uup")
+bus = &"DeathCannon"

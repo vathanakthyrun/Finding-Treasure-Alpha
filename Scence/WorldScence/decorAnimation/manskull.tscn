@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://fwypf4rgxai7"]
+
+[ext_resource type="Texture2D" uid="uid://d33rlt62b6bue" path="res://animal_decor/manskull.png" id="1_xbfmt"]
+
+[node name="manskull" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8.000004, -2)
+scale = Vector2(0.13605694, 0.12666611)
+texture = ExtResource("1_xbfmt")

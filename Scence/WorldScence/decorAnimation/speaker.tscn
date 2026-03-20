@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://fwjn7vl3njbg"]
+
+[ext_resource type="Texture2D" uid="uid://dwbyxyuv87682" path="res://used_asset/speaker.png" id="1_8i8a1"]
+[ext_resource type="Script" uid="uid://0fm3lqg5scku" path="res://Scence/WorldScence/Scripts/decorScript/speaker.gd" id="1_ji7dk"]
+[ext_resource type="AudioStream" uid="uid://chpxlt75a8ipp" path="res://used_asset/Music/speakerOGG.ogg" id="3_ji7dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty5t4"]
+size = Vector2(53, 47)
+
+[node name="Speaker" type="Node2D"]
+position = Vector2(-1, -5)
+script = ExtResource("1_ji7dk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.54978037, 0.52459013)
+texture = ExtResource("1_8i8a1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_ty5t4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ji7dk")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -50.0
+offset_top = -47.0
+offset_right = 56.0
+offset_bottom = -24.0
+text = "[E] Play Music"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

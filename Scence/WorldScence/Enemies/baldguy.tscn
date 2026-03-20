@@ -1,0 +1,150 @@
+[gd_scene load_steps=39 format=3 uid="uid://cr83pd1jyrp4w"]
+
+[ext_resource type="Texture2D" uid="uid://t1kp2xvuh0mc" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/1.png" id="1_gkg1r"]
+[ext_resource type="Script" uid="uid://y5hkjbiwiiua" path="res://Scence/WorldScence/Scripts/Enemies/baldguy.gd" id="1_m0geo"]
+[ext_resource type="Texture2D" uid="uid://ycgxbxlmlya8" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/2.png" id="3_xvgtc"]
+[ext_resource type="Texture2D" uid="uid://fl0nqpqf1bm4" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/3.png" id="4_voxi8"]
+[ext_resource type="Texture2D" uid="uid://crfkqnuoifld8" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/4.png" id="5_mfef4"]
+[ext_resource type="Texture2D" uid="uid://cn7qfk8tx3mo1" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/5.png" id="6_61te4"]
+[ext_resource type="Texture2D" uid="uid://ddd000mcwmkss" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/6.png" id="7_jxy4j"]
+[ext_resource type="Texture2D" uid="uid://d4mxn3kvgc48u" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/7.png" id="8_5ndfo"]
+[ext_resource type="Texture2D" uid="uid://bteh74d7mtnao" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/8.png" id="9_xddve"]
+[ext_resource type="Texture2D" uid="uid://cpgswt05em2d8" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/9.png" id="10_utg85"]
+[ext_resource type="Texture2D" uid="uid://b1gefp0ht6ffc" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/10.png" id="11_pxn5c"]
+[ext_resource type="Texture2D" uid="uid://bwj8jn17yl7ne" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/11.png" id="12_olwya"]
+[ext_resource type="Texture2D" uid="uid://dgpyr0a4pv7s4" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/12.png" id="13_8dkdo"]
+[ext_resource type="Texture2D" uid="uid://bwwpugxwqfyp2" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/13.png" id="14_pt80p"]
+[ext_resource type="Texture2D" uid="uid://cphr32og58aqj" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/2-Run/14.png" id="15_j3cha"]
+[ext_resource type="Texture2D" uid="uid://g8afccfdfa2c" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/9-Dead Hit/1.png" id="16_j52l8"]
+[ext_resource type="Texture2D" uid="uid://bb225dsunmhfs" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/9-Dead Hit/2.png" id="17_dga8b"]
+[ext_resource type="Texture2D" uid="uid://di7foyu55vk3f" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/9-Dead Hit/3.png" id="18_abt2g"]
+[ext_resource type="Texture2D" uid="uid://dm6582eq4xru6" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/9-Dead Hit/4.png" id="19_bxdox"]
+[ext_resource type="Texture2D" uid="uid://cv86l7j7y8k7w" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/9-Dead Hit/5.png" id="20_r100j"]
+[ext_resource type="Texture2D" uid="uid://b2i83qbfk0hj2" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/9-Dead Hit/6.png" id="21_pwpwl"]
+[ext_resource type="Texture2D" uid="uid://dv822qpeegdln" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/1.png" id="22_7bmsv"]
+[ext_resource type="Texture2D" uid="uid://ckmykrdxis71m" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/2.png" id="23_0svcq"]
+[ext_resource type="Texture2D" uid="uid://bc1wjrhkacey0" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/3.png" id="24_6a3mw"]
+[ext_resource type="Texture2D" uid="uid://tqj0y4yn5guy" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/4.png" id="25_8c2bx"]
+[ext_resource type="Texture2D" uid="uid://bdj7toxts2l7b" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/5.png" id="26_jusvn"]
+[ext_resource type="Texture2D" uid="uid://cpq4qii06k7ho" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/6.png" id="27_rpojp"]
+[ext_resource type="Texture2D" uid="uid://cla6pt2hmlfqm" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/7.png" id="28_oprb3"]
+[ext_resource type="Texture2D" uid="uid://dc36e4ovq2ryy" path="res://used_asset/Enemy_V2/2-Enemy-Bald Pirate/8-Hit/8.png" id="29_yoyn1"]
+[ext_resource type="AudioStream" uid="uid://dt6f8xcrkt7xx" path="res://used_asset/Music/SFX/perfect-street-fighter-sound-effect (mp3cut.net).ogg" id="30_380yw"]
+[ext_resource type="AudioStream" uid="uid://bmhwm4bluonm3" path="res://used_asset/Music/SFX/aaughmp3 (mp3cut.net).ogg" id="31_dwnhp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4nj4"]
+radius = 9.0
+height = 38.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8undl"]
+radius = 12.0
+height = 38.0
+
+[sub_resource type="Animation" id="Animation_dfevc"]
+resource_name = "Die"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_j52l8"), ExtResource("17_dga8b"), ExtResource("18_abt2g"), ExtResource("19_bxdox"), ExtResource("20_r100j"), ExtResource("21_pwpwl")]
+}
+
+[sub_resource type="Animation" id="Animation_7odx1"]
+resource_name = "Hit"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("22_7bmsv"), ExtResource("23_0svcq"), ExtResource("24_6a3mw"), ExtResource("25_8c2bx"), ExtResource("26_jusvn"), ExtResource("27_rpojp"), ExtResource("28_oprb3"), ExtResource("29_yoyn1")]
+}
+
+[sub_resource type="Animation" id="Animation_aaqc5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gkg1r")]
+}
+
+[sub_resource type="Animation" id="Animation_vov27"]
+resource_name = "Run"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_gkg1r"), ExtResource("3_xvgtc"), ExtResource("4_voxi8"), ExtResource("5_mfef4"), ExtResource("6_61te4"), ExtResource("7_jxy4j"), ExtResource("8_5ndfo"), ExtResource("9_xddve"), ExtResource("10_utg85"), ExtResource("11_pxn5c"), ExtResource("12_olwya"), ExtResource("13_8dkdo"), ExtResource("14_pt80p"), ExtResource("15_j3cha")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bm6fy"]
+_data = {
+&"Die": SubResource("Animation_dfevc"),
+&"Hit": SubResource("Animation_7odx1"),
+&"RESET": SubResource("Animation_aaqc5"),
+&"Run": SubResource("Animation_vov27")
+}
+
+[node name="baldguy" type="CharacterBody2D" groups=["Enemies", "Resettable"]]
+script = ExtResource("1_m0geo")
+move_speed = 50.0
+max_health = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.3841858e-07, 1.0000004)
+scale = Vector2(-0.687, 0.638)
+texture = ExtResource("1_gkg1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_y4nj4")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_8undl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bm6fy")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-13, 0)
+target_position = Vector2(0, 30)
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_380yw")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_dwnhp")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

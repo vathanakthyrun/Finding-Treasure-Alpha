@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbv8jotpj8ccq"]
+
+[ext_resource type="Texture2D" uid="uid://qa15avbpann0" path="res://animal_decor/cowskull.png" id="1_ak0cn"]
+
+[node name="cowskull" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.9999847, -5)
+scale = Vector2(0.21955411, 0.2380786)
+texture = ExtResource("1_ak0cn")

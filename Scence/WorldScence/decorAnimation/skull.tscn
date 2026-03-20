@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1g5ggrercdqc"]
+
+[ext_resource type="Texture2D" uid="uid://bmpyxnkhy33bj" path="res://animal_decor/skull.png" id="1_yumgh"]
+
+[node name="skull" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.0000076, -6.000004)
+scale = Vector2(0.10459606, 0.119360894)
+texture = ExtResource("1_yumgh")

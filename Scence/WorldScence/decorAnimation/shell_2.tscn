@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c17nroxhp7nam"]
+
+[ext_resource type="Texture2D" uid="uid://3ufv1y08feen" path="res://animal_decor/shell2.png" id="1_muhqt"]
+
+[node name="shell2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.3841858e-07, -0.99999994)
+scale = Vector2(0.12119013, 0.10745614)
+texture = ExtResource("1_muhqt")

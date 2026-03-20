@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp6fx86ma72u2"]
+
+[ext_resource type="Texture2D" uid="uid://c1fa36brct175" path="res://animal_decor/Blue-green_crystal_dark_shadow3.png" id="1_v651w"]
+
+[node name="greencrystal" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.65625006, 0.59375)
+texture = ExtResource("1_v651w")

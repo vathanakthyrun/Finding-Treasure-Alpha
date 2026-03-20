@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cut5vnc0krmh5"]
+
+[ext_resource type="Script" uid="uid://bd2ahfw3rrs0s" path="res://Scence/WorldScence/Scripts/floating_text.gd" id="1_otpyi"]
+[ext_resource type="FontFile" uid="uid://dgj32dj5dg87p" path="res://used_asset/Font/Game Paused DEMO.otf" id="2_twhk3"]
+
+[node name="FloatingText" type="Node2D"]
+script = ExtResource("1_otpyi")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_twhk3")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 3
+vertical_alignment = 3

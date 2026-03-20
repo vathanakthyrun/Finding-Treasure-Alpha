@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn38bp5ech255"]
+
+[ext_resource type="Texture2D" uid="uid://cowbiwclm6swj" path="res://animal_decor/tombstone_no_bg.png" id="1_ltejh"]
+
+[node name="tombstone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.9999962, 1)
+scale = Vector2(0.13413599, 0.1314616)
+texture = ExtResource("1_ltejh")

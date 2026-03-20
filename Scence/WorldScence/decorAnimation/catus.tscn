@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck8dhjcwyedd1"]
+
+[ext_resource type="Script" uid="uid://diq1tvxce73ow" path="res://Scence/WorldScence/Scripts/decorScript/catus.gd" id="1_4cjgo"]
+[ext_resource type="Texture2D" uid="uid://blryqybp7x5ek" path="res://used_asset/cactus.png" id="2_4cjgo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh8km"]
+atlas = ExtResource("2_4cjgo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0ckp"]
+atlas = ExtResource("2_4cjgo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50p4t"]
+atlas = ExtResource("2_4cjgo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abs62"]
+atlas = ExtResource("2_4cjgo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jst0"]
+atlas = ExtResource("2_4cjgo")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omih2"]
+atlas = ExtResource("2_4cjgo")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_omih2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh8km")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0ckp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50p4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abs62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jst0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omih2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}]
+
+[node name="catus" type="CharacterBody2D"]
+script = ExtResource("1_4cjgo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -8)
+scale = Vector2(1.40625, 1.53125)
+sprite_frames = SubResource("SpriteFrames_omih2")
+animation = &"Idle"
+frame_progress = 0.83979535

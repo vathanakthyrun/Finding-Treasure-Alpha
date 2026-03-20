@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://yd5ot17vihye"]
+
+[ext_resource type="Texture2D" uid="uid://dpbk2ngp464tl" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/01.png" id="1_tp7ln"]
+[ext_resource type="Script" uid="uid://k1t0feu1fntu" path="res://Scence/WorldScence/Scripts/decorScript/candle.gd" id="1_xtvh6"]
+[ext_resource type="Texture2D" uid="uid://u2xrqpfn1pik" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/02.png" id="2_xtvh6"]
+[ext_resource type="Texture2D" uid="uid://c6ah1t1g44oed" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/03.png" id="3_2hobk"]
+[ext_resource type="Texture2D" uid="uid://hh1s1vs1fby3" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/04.png" id="4_la1kn"]
+[ext_resource type="Texture2D" uid="uid://bsobt3wt12k1r" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/05.png" id="5_crg56"]
+[ext_resource type="Texture2D" uid="uid://bx3rswdmbexc4" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Candle/Candle/06.png" id="6_wykoe"]
+
+[sub_resource type="Animation" id="Animation_muubp"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3, 0.46666667, 0.6333333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_tp7ln"), ExtResource("2_xtvh6"), ExtResource("3_2hobk"), ExtResource("4_la1kn"), ExtResource("5_crg56"), ExtResource("6_wykoe")]
+}
+
+[sub_resource type="Animation" id="Animation_irdwa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_tp7ln")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gaakf"]
+_data = {
+&"Idle": SubResource("Animation_muubp"),
+&"RESET": SubResource("Animation_irdwa")
+}
+
+[node name="candle" type="Node2D"]
+script = ExtResource("1_xtvh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tp7ln")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gaakf")
+}

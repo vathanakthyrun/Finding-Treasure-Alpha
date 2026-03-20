@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfa3j5gk7aisi"]
+
+[ext_resource type="Texture2D" uid="uid://dqrfxsvo8kc5i" path="res://animal_decor/lifering.png" id="1_neasp"]
+
+[node name="lifering" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.0000076, -1.0000038)
+scale = Vector2(0.17974882, 0.16645408)
+texture = ExtResource("1_neasp")

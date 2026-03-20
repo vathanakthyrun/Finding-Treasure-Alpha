@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://buili6gv6lcse"]
+
+[ext_resource type="Script" uid="uid://c6m4k8nac06p8" path="res://Scence/WorldScence/Scripts/decorScript/seashell.gd" id="1_fkfr3"]
+[ext_resource type="Texture2D" uid="uid://cpvh71hntlih1" path="res://Treasure Hunters/TileSet/Sprites/Objects/Seashell Bite/1.png" id="1_qj7o5"]
+[ext_resource type="Texture2D" uid="uid://wnjlq7usoyot" path="res://Treasure Hunters/TileSet/Sprites/Objects/Seashell Bite/2.png" id="2_fkfr3"]
+[ext_resource type="Texture2D" uid="uid://cpg31vhyamji1" path="res://Treasure Hunters/TileSet/Sprites/Objects/Seashell Bite/3.png" id="3_md05n"]
+[ext_resource type="Texture2D" uid="uid://dc61r7jcnr1wg" path="res://Treasure Hunters/TileSet/Sprites/Objects/Seashell Bite/4.png" id="4_myy4u"]
+[ext_resource type="Texture2D" uid="uid://b77oip4b78d8t" path="res://Treasure Hunters/TileSet/Sprites/Objects/Seashell Bite/5.png" id="5_ylw8m"]
+[ext_resource type="Texture2D" uid="uid://dq1cisjrx5707" path="res://Treasure Hunters/TileSet/Sprites/Objects/Seashell Bite/6.png" id="6_m30wg"]
+
+[sub_resource type="Animation" id="Animation_bhsku"]
+resource_name = "Idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.3, 0.56666666, 0.8333333, 1.1333333, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_qj7o5"), ExtResource("2_fkfr3"), ExtResource("3_md05n"), ExtResource("4_myy4u"), ExtResource("5_ylw8m"), ExtResource("6_m30wg")]
+}
+
+[sub_resource type="Animation" id="Animation_kwhhs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_qj7o5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iynlo"]
+_data = {
+&"Idle": SubResource("Animation_bhsku"),
+&"RESET": SubResource("Animation_kwhhs")
+}
+
+[node name="seashell" type="Node2D"]
+script = ExtResource("1_fkfr3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qj7o5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iynlo")
+}

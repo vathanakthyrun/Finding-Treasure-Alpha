@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dt6f8xcrkt7xx"
+path="res://.godot/imported/perfect-street-fighter-sound-effect (mp3cut.net).ogg-0c623deee5552f558748d9a21f1d2f89.oggvorbisstr"
+
+[deps]
+
+source_file="res://used_asset/Music/SFX/perfect-street-fighter-sound-effect (mp3cut.net).ogg"
+dest_files=["res://.godot/imported/perfect-street-fighter-sound-effect (mp3cut.net).ogg-0c623deee5552f558748d9a21f1d2f89.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
