@@ -28,7 +28,8 @@ I just use a random picture in my gallery
 - finish point
 - total score
 # Asset
-
+- Author : Pixel Frog, Treasure Hunter https://pixelfrog-assets.itch.io/treasure-hunters
+- Author : Pixel Frog, Pirate Bomb https://pixelfrog-assets.itch.io/pirate-bomb
 
 # SFX & Background Sound
 
